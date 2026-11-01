@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1200" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="stone" cx="50%" cy="45%" r="75%">
+      <stop stop-color="#aa9173"/><stop offset=".52" stop-color="#8a705c"/><stop offset="1" stop-color="#493b34"/>
+    </radialGradient>
+    <radialGradient id="medallion">
+      <stop stop-color="#5b493c"/><stop offset=".68" stop-color="#685344"/><stop offset="1" stop-color="#9b7957"/>
+    </radialGradient>
+    <linearGradient id="bronze" x2="0" y2="1">
+      <stop stop-color="#e7c787"/><stop offset=".47" stop-color="#a7753e"/><stop offset="1" stop-color="#efcf91"/>
+    </linearGradient>
+    <pattern id="flecks" width="38" height="38" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="8" r="1.2" fill="#e6cfaa" opacity=".16"/>
+      <circle cx="23" cy="29" r=".8" fill="#2a211f" opacity=".21"/>
+      <path d="m32 7 3 1M10 31l2-1" stroke="#dcc6a0" stroke-opacity=".13"/>
+    </pattern>
+    <g id="cloud" fill="none" stroke="#ddba7e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity=".28">
+      <path d="M0 0c45-34 99-34 133 0 16 16 16 42-3 51-19 9-39-3-34-23 4-13 22-17 28-8M13 49c51-21 92-12 115 13 27 29 76 17 85-16"/>
+      <path d="M30 70c26 2 50 11 65 27 24 26 65 21 83 3" stroke-width="4"/>
+    </g>
+    <g id="corner" fill="none" stroke="#d5ad72" stroke-width="5" opacity=".62">
+      <path d="M0 150V0h150M25 120V25h95M51 99V51h48"/>
+      <path d="M147 18c-28 9-44 33-42 57-22-3-40 11-44 28" stroke-width="3"/>
+    </g>
+  </defs>
+  <path fill="url(#stone)" d="M0 0h1920v1200H0z"/>
+  <path fill="url(#flecks)" d="M0 0h1920v1200H0z"/>
+  <path d="M0 0h1920v1200H0z" fill="none" stroke="#352822" stroke-width="46"/>
+  <path d="M22 22h1876v1156H22z" fill="none" stroke="url(#bronze)" stroke-width="12"/>
+  <path d="M41 41h1838v1118H41z" fill="none" stroke="#e2c18b" stroke-opacity=".42" stroke-width="2"/>
+  <path d="M58 58h1804v1084H58z" fill="none" stroke="#3f3028" stroke-opacity=".63" stroke-width="5"/>
+  <use href="#corner" x="70" y="70"/>
+  <use href="#corner" transform="translate(1850 70) scale(-1 1)"/>
+  <use href="#corner" transform="translate(70 1130) scale(1 -1)"/>
+  <use href="#corner" transform="translate(1850 1130) scale(-1 -1)"/>
+  <circle cx="960" cy="595" r="490" fill="#3d302a" opacity=".19"/>
+  <circle cx="960" cy="595" r="458" fill="url(#medallion)" stroke="#d0a66a" stroke-opacity=".72" stroke-width="8"/>
+  <circle cx="960" cy="595" r="434" fill="none" stroke="#392d28" stroke-width="10" opacity=".68"/>
+  <circle cx="960" cy="595" r="407" fill="none" stroke="#d5b078" stroke-width="3" opacity=".6"/>
+  <circle cx="960" cy="595" r="350" fill="none" stroke="#c7a373" stroke-width="2" opacity=".33"/>
+  <circle cx="960" cy="595" r="285" fill="none" stroke="#dac08b" stroke-width="3" opacity=".21"/>
+  <g fill="#d3ae76" opacity=".43">
+    <path d="M960 151 978 181 960 211 942 181zM960 979l18 30-18 30-18-30zM516 595l30-18 30 18-30 18zM1344 595l30-18 30 18-30 18z"/>
+    <circle cx="665" cy="300" r="6"/><circle cx="1255" cy="300" r="6"/><circle cx="665" cy="890" r="6"/><circle cx="1255" cy="890" r="6"/>
+  </g>
+  <g fill="none" stroke="#dec18e" stroke-opacity=".22" stroke-width="8" stroke-linecap="round">
+    <path d="M660 632c75-167 248-246 374-191 99 43 120 133 67 193-34 39-89 40-113 6-20-29-1-63 23-60"/>
+    <path d="M1260 556c-75 167-248 246-374 191-99-43-120-133-67-193 34-39 89-40 113-6 20 29 1 63-23 60"/>
+  </g>
+  <use href="#cloud" x="210" y="220"/>
+  <use href="#cloud" transform="translate(1710 220) scale(-1 1)"/>
+  <use href="#cloud" transform="translate(210 970) scale(1 -1)"/>
+  <use href="#cloud" transform="translate(1710 970) scale(-1 -1)"/>
+  <g opacity=".33" fill="none" stroke="#d8b784" stroke-width="4">
+    <path d="M130 565c80-67 175-64 225 7 51 74 157 72 205 5"/>
+    <path d="M1790 565c-80-67-175-64-225 7-51 74-157 72-205 5"/>
+    <path d="M130 845c80-67 175-64 225 7 51 74 157 72 205 5"/>
+    <path d="M1790 845c-80-67-175-64-225 7-51 74-157 72-205 5"/>
+  </g>
+</svg>

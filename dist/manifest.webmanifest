@@ -1,0 +1,25 @@
+{
+  "id": "./",
+  "name": "阵略 · 单机版",
+  "short_name": "阵略",
+  "description": "独立单机三国题材人机卡牌游戏，包含四种模式和武将库",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fff9eb",
+  "theme_color": "#168263",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

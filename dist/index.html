@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101a1a">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>阵略 · 单机版</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="atmosphere.css?v=4">
+  <script defer src="cards.js"></script>
+  <script defer src="generals.js?v=88"></script>
+  <script defer src="character-art.js?v=76"></script>
+  <script defer src="extra-skills.js?v=73"></script>
+  <script defer src="dynasty-skills.js?v=74"></script>
+  <script defer src="new-skills.js?v=52"></script>
+  <script defer src="sp-skills.js?v=5"></script>
+  <script defer src="shen-skills.js?v=68"></script>
+  <script defer src="guojia-skills.js?v=55"></script>
+  <script defer src="weiyan-skills.js?v=60"></script>
+  <script defer src="zhouyu-skills.js?v=64"></script>
+  <script defer src="guanyu-skills.js?v=63"></script>
+  <script defer src="zhaoyun-skills.js?v=4"></script>
+  <script defer src="zhangfei-skills.js?v=2"></script>
+  <script defer src="machao-skills.js?v=5"></script>
+  <script defer src="zhoutai-skills.js?v=3"></script>
+  <script defer src="lusu-skills.js?v=3"></script>
+  <script defer src="lvmeng-skills.js?v=6"></script>
+  <script defer src="sunce-skills.js"></script>
+  <script defer src="liubei-skills.js"></script>
+  <script defer src="sunquan-skills.js"></script>
+  <script defer src="huanggai-skills.js"></script>
+  <script defer src="caocao-skills.js"></script>
+  <script defer src="liuxie-skills.js"></script>
+  <script defer src="dongzhuo-skills.js"></script>
+  <script defer src="simayi-skills.js"></script>
+  <script defer src="zhangliao-skills.js"></script>
+  <script defer src="caopi-skills.js"></script>
+  <script defer src="caoren-skills.js"></script>
+  <script defer src="feiyi-skills.js"></script>
+  <script defer src="xunyu-skills.js"></script>
+  <script defer src="chengong-skills.js"></script>
+  <script defer src="liru-skills.js"></script>
+  <script defer src="ai-strategy.js"></script>
+  <script defer src="tanhe-skills.js"></script>
+  <script defer src="caiyong-skills.js"></script>
+  <script defer src="diaochan-skills.js"></script>
+  <script defer src="jiaxu-skills.js"></script>
+  <script defer src="yuanshao-skills.js"></script>
+  <script defer src="zhangjiao-skills.js"></script>
+  <script defer src="liushan-skills.js"></script>
+  <script defer src="ganning-skills.js"></script>
+  <script defer src="luxun-skills.js"></script>
+  <script defer src="sunjian-skills.js"></script>
+  <script defer src="dongzhuo-rework-skills.js"></script>
+  <script defer src="xuchu-skills.js"></script>
+  <script defer src="engine.js?v=78"></script>
+  <script defer src="sound.js"></script>
+  <script defer src="app.js?v=90"></script>
+  <link rel="stylesheet" href="choice-overflow.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <header class="app-header">
+    <a class="brand" href="#" id="brand" aria-label="阵略大厅"><span class="brand-seal">阵</span><span>阵略<small>ZHENLÜE</small></span></a>
+    <div class="header-meta"><span class="live-dot"></span> 独立单机版 <span class="header-sep">/</span> <span id="save-status">无需登录 · 离线可玩</span></div>
+    <nav><a class="text-button" href="strength.html" target="_blank" rel="noopener">武将强度</a><button class="text-button general-library-nav" id="generals-btn" aria-controls="general-library">武将库</button><button class="text-button" id="help-btn">规则与牌库</button><div class="sound-controls"><button class="text-button" id="sound-btn" aria-pressed="true">音效：开</button><button class="text-button" id="sound-settings-btn" aria-expanded="false" aria-controls="sound-panel">音量</button><section class="sound-panel" id="sound-panel" hidden aria-label="音效设置"><div class="sound-panel-heading"><strong>音效设置</strong><span id="sound-volume-label">35%</span></div><label class="sound-volume-control">音效音量<input id="sound-volume" type="range" min="0" max="100" step="1" value="35" aria-label="音效音量"></label><p id="sound-status" class="sound-status">点击操作后即可播放声音</p><div class="sound-preview-grid"><button data-preview-cue="slash">挥刀</button><button data-preview-cue="jink">闪避</button><button data-preview-cue="thunderDamage">雷击</button><button data-preview-cue="heal">回复</button><button data-preview-cue="judge">判定</button><button data-preview-cue="win">胜利</button></div><p class="sound-panel-note">点击上方按钮试听 · 音量自动保存</p></section></div><button class="text-button" id="lobby-btn" hidden>返回大厅</button></nav>
+  </header>
+
+  <main id="lobby" class="lobby">
+    <div class="lobby-intro"><span class="eyebrow">一张牌，一个决定</span><h1>入局，见胜负。</h1><p>选择你的战场。其余席位由电脑接手。</p></div>
+    <div class="mode-grid" role="group" aria-label="选择游戏模式">
+      <button class="mode-card" data-mode="duel"><span class="mode-number">01 / 对决</span><span class="mode-emblem">决</span><strong>1V1</strong><span class="mode-name">一对一 · 正面交锋</span><p>专注每一次攻防，击败唯一的对手。</p><span class="mode-bottom">你 + 1 位电脑 <span>↗</span></span></button>
+      <button class="mode-card selected" data-mode="team" aria-pressed="true"><span class="mode-number">02 / 同袍</span><span class="mode-emblem">合</span><strong>2V2</strong><span class="mode-name">两人同心 · 并肩破阵</span><p>保护同伴，合力击败对面的两名角色。</p><span class="mode-bottom">你 + 3 位电脑 <span>↗</span></span></button>
+      <button class="mode-card" data-mode="identity"><span class="mode-number">03 / 军争</span><span class="mode-emblem">谋</span><strong>军8</strong><span class="mode-name">八人身份 · 暗流交锋</span><p>主、忠、反、内。看清局势，再出一手。</p><span class="mode-bottom">你 + 7 位电脑 <span>↗</span></span></button>
+      <button class="mode-card" data-mode="landlord"><span class="mode-number">04 / 斗地主</span><span class="mode-emblem">斗</span><strong>斗地主</strong><span class="mode-name">地主对抗两名农民</span><p>选择地主或农民，用武将技能争夺胜局。</p><span class="mode-bottom">你 + 2 位电脑 <span>↗</span></span></button>
+    </div>
+    <section class="setup-panel">
+      <div class="setup-heading"><span class="eyebrow">本局设置</span><h2 id="setup-title">同袍共进</h2><p id="setup-summary"></p></div>
+      <div class="setup-fields">
+        <label id="seat-field">你的座位<select id="seat-select"><option value="0">1号位 · 青方先手</option><option value="1">2号位 · 赤方</option><option value="2">3号位 · 赤方</option><option value="3">4号位 · 青方</option><option value="random">随机座位</option></select></label>
+        <label id="role-field" hidden>你的身份<select id="role-select"><option value="random">随机身份</option><option>主公</option><option>忠臣</option><option>反贼</option><option>内奸</option></select></label>
+        <label id="duel-field" hidden>对决方式<select id="duel-select"><option value="single">单将对决</option><option value="relay">经典三将接力</option></select></label>
+        <label>角色性别<select id="gender-select"><option value="male">男</option><option value="female">女</option></select></label>
+        <label class="general-search-field">搜索武将<input id="setup-general-search" type="search" placeholder="输入武将或技能名" autocomplete="off" aria-label="搜索选将列表"></label>
+        <label>你的武将<select id="general-select"></select></label>
+        <label>电脑武将<select id="ai-general-select"></select></label>
+        <label>电脑节奏<select id="lobby-speed"><option value="normal">正常</option><option value="fast">快速</option><option value="slow">慢速</option></select></label>
+      </div>
+      <div class="start-area"><button id="start-btn" class="primary-button">开始对局 <span>→</span></button><button id="resume-btn" class="secondary-button" hidden>继续上次对局</button><button id="export-save-btn" class="secondary-button" hidden>导出存档</button><button id="import-save-btn" class="secondary-button">导入存档</button><input id="import-save-file" type="file" accept=".json,application/json" hidden></div>
+    </section>
+    <div class="lobby-footer"><span>默认 <b>4血无技能</b> · 可选 <b id="skill-general-count"></b></span><span>自动存档 · 无需安装 · 电脑不读取你的手牌</span><a href="portrait-gallery.html">查看武将立绘总览 ↗</a></div>
+  </main>
+
+  <main id="general-library" class="general-library" hidden aria-labelledby="general-library-title">
+    <div class="general-library-heading"><div><span class="eyebrow">知其所长，方能用其所长</span><h1 id="general-library-title" tabindex="-1">武将库</h1><p id="general-library-count"></p></div><button id="general-library-back" class="secondary-button">返回大厅</button></div>
+    <div class="general-library-layout">
+      <section class="general-catalog" aria-label="已有武将列表">
+        <div class="general-catalog-toolbar"><label>查找武将<input id="general-search" type="search" placeholder="搜索武将或技能" aria-label="搜索武将或技能"></label><label>势力<select id="general-faction-filter" aria-label="筛选武将势力"><option value="all">全部势力</option></select></label></div>
+        <p id="general-filter-count" class="general-filter-count" role="status"></p>
+        <div id="general-catalog-list" class="general-catalog-list"></div>
+      </section>
+      <section id="general-detail" class="general-detail" aria-label="武将详情" aria-live="polite"></section>
+    </div>
+    <p class="general-library-footnote"><span id="general-library-live-note" hidden>当前对局已暂停，返回对局即可继续。<br></span>在大厅“你的武将”中选择后即可开局。1V1接力使用所选武将作为首将，后续为4血无技能角色。</p>
+  </main>
+
+  <main id="arena" class="arena" hidden>
+    <div class="game-toolbar"><div><span class="eyebrow" id="game-mode">2V2</span><h1 id="game-title">同袍 · 并肩破阵</h1></div><div class="toolbar-controls"><span id="round-label">第1轮</span><span class="turn-pill" id="turn-label">准备</span><label class="speed-control">节奏 <select id="game-speed"><option value="normal">正常</option><option value="fast">快速</option><option value="slow">慢速</option></select></label><button id="log-open-btn" class="secondary-button small" aria-haspopup="dialog">战局记录 <span id="log-count">0</span></button><button id="auto-btn" class="secondary-button small" aria-pressed="false">托管：关</button></div></div>
+    <div class="game-layout">
+      <section class="play-area" aria-label="对战牌桌">
+          <div id="board" class="board">
+            <div class="table-ring" aria-hidden="true"></div><span class="table-watermark" aria-hidden="true">阵</span>
+            <div id="seats"></div>
+            <div class="table-center"><div class="deck-status"><span>牌堆 <b id="deck-count">160</b></span><span class="dot-divider">·</span><span>弃牌 <b id="discard-count">0</b></span></div><div id="last-card" class="last-card"></div><div id="judgment-result" class="judgment-result" hidden aria-live="polite"></div><p id="table-event">准备入局</p></div>
+          </div>
+        <section class="command-bar" aria-live="polite"><div class="command-copy"><span id="phase-label" class="eyebrow">准备</span><h2 id="prompt-title">电脑正在行动</h2><p id="prompt-detail">稍候，观察牌桌上的变化。</p></div><div id="command-actions" class="command-actions"></div></section>
+        <section id="active-skill-bar" class="active-skill-bar" hidden aria-label="主动技能"></section>
+        <section class="hand-zone"><div class="hand-heading"><span>你的手牌 <b id="hand-count">0</b></span><div><button id="spear-btn" class="text-button" hidden>丈八蛇矛</button><button id="sort-btn" class="text-button">整理手牌</button><span class="hand-hint">点牌选中 · 点角色指定目标</span></div></div><div id="hand" class="hand" aria-label="你的手牌"></div><div id="card-description" class="card-description" hidden></div></section>
+        <div id="self-seat" class="self-seat"><div id="self-portrait"></div><section id="player-zones" class="player-zones" aria-label="你的装备区"></section></div>
+          <div id="card-flight-layer" class="card-flight-layer" aria-hidden="true"></div>
+        <section id="opponent-skills" class="opponent-skills" hidden role="dialog" aria-label="对手武将技能"><div class="opponent-skills-heading"><h2 id="opponent-skills-title"></h2><button id="opponent-skills-close" class="secondary-button small">返回牌桌</button></div><div id="opponent-skills-content"></div><p>右击任意位置也可返回牌桌</p></section>
+      </section>
+    </div>
+    <details class="arena-reference"><summary>对局目标、武将技能与操作说明</summary><div class="arena-reference-content"><section class="objective"><span class="eyebrow">你的目标</span><h2 id="objective-title"></h2><p id="objective-detail"></p><div id="team-summary"></div></section><section id="skill-panel" class="skill-panel" hidden aria-label="武将技能"></section><p class="sidebar-tip">响应时可点击对应手牌，或使用牌桌下方的按钮。空格：确认 / 结束出牌　Esc：取消选择</p></div></details>
+  </main>
+
+  <div id="modal-backdrop" class="modal-backdrop" hidden><section id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-heading"><h2 id="modal-title"></h2><button id="modal-close" class="icon-button" aria-label="关闭">×</button></div><div id="modal-content"></div></section></div>
+  <div id="judgment-overlay" class="judgment-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="judgment-heading">
+    <section class="judgment-display">
+      <span class="eyebrow">翻开判定牌</span>
+      <h2 id="judgment-heading"></h2>
+      <div id="judgment-card-face" class="judgment-card-face"></div>
+      <p id="judgment-verdict" class="judgment-verdict"></p>
+      <p id="judgment-rule" class="judgment-rule"></p>
+      <p id="judgment-auto-hint" class="judgment-auto-hint">展示后自动继续结算</p>
+      <button id="judgment-close" class="secondary-button" hidden>返回牌桌</button>
+    </section>
+  </div>
+  <div id="harvest-overlay" class="harvest-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="harvest-heading">
+    <section class="harvest-display">
+      <span class="eyebrow">五谷丰登 · 公开亮牌</span>
+      <h2 id="harvest-heading">先看牌，再决定是否无懈</h2>
+      <p id="harvest-status" class="harvest-status"></p>
+      <div id="harvest-cards" class="harvest-cards" aria-label="五谷丰登亮出的牌"></div>
+      <div id="harvest-actions" class="harvest-actions"></div>
+    </section>
+  </div>
+  <div id="pindian-overlay" class="pindian-overlay" hidden role="status" aria-live="polite"></div>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <noscript>本地牌桌需要浏览器开启 JavaScript 才能运行。</noscript>
+</body>
+</html>
